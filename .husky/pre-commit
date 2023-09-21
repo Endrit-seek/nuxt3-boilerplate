@@ -18,14 +18,14 @@ echo '     / ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 '
 
 # Check ESLint Standards
-nuxt yarn lint ||
+yarn lint ||
 (
     echo '    +----------------------------------------------------+
     |    🔨 We found errors during ESLint check 🔨       |
     |                                                    |
     |      Trying to automatically fix the problems...   |
     +----------------------------------------------------+'
-    nuxt yarn lint:fix ||
+    yarn lint:fix ||
     (
          echo '        +------------------------------------------------------------------------+
         |            ❌ Could not automatically fix the changes ❌               |
@@ -47,4 +47,4 @@ echo '    +---------------------------------------------+
 
     '
 
-nuxt yarn lint-staged
+yarn lint-staged

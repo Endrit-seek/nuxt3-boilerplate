@@ -7,35 +7,36 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
+    "prepare": "husky install",
+    "postinstall": "nuxt prepare && husky install",
     "lint": "eslint --ext \"**/*.+(js,jsx,vue,ts,tsx,css,scss,md)\" --ignore-path .gitignore .",
-    "lint:fix": "eslint --fix --ext .js,.ts,.vue --ignore-path .gitignore . ",
-    "test": "npx playwright test"
+    "lint:fix": "eslint --fix --ext .js,.ts,.vue --ignore-path .gitignore . "
   },
   "devDependencies": {
-    "@nuxt/devtools": "latest",
     "@babel/eslint-parser": "^7.18.9",
+    "@nuxt/devtools": "latest",
     "@nuxtjs/eslint-config-typescript": "^12.1.0",
-    "@typescript-eslint/parser": "^6.7.2",
     "@typescript-eslint/eslint-plugin": "^5.30.6",
+    "@typescript-eslint/parser": "^6.7.2",
     "eslint": "^8.49.0",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-prettier": "^5.0.0",
     "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^9.0.0",
     "eslint-import-resolver-alias": "^1.1.2",
     "eslint-import-resolver-babel-module": "^5.3.1",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-nuxt": "^3.2.0",
+    "eslint-plugin-prettier": "^5.0.0",
     "husky": "^8.0.1",
     "nuxt": "^3.7.3",
     "prettier": "^3.0.3",
     "typescript": "^5.2.2"
   },
+  "dependencies": {
+    "lint-staged": "^14.0.1"
+  },
   "husky": {
     "hooks": {
-      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true",
-      "pre-commit": "lint-staged",
-      "pre-push": "yarn test"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
